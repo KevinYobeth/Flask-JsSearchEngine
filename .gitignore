@@ -1,3 +1,4 @@
+/__pycache__
 /venv
-.search.py
-.testing.py
+search.py
+testing.py

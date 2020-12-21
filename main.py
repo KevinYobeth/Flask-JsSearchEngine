@@ -1,5 +1,4 @@
 from flask import Flask, render_template, jsonify
-# import search
 import numpy as np
 import pandas as pd
 import json
