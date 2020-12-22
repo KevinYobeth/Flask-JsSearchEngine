@@ -70,7 +70,7 @@ def index():
         rand[str(randomNumber)] = {"id": int(
             randomNumber), "title": title[randomNumber]}
 
-    return jsonify(rand)
+    return jsonify(rand), 200
 
 
 @app.route('/search', methods=['POST'])
@@ -87,17 +87,18 @@ def search():
         ret = {"id": int(item), "title": title[item]}
         jsonTemplate[str(item)] = ret
 
-    return jsonify(jsonTemplate)
+    return jsonify(jsonTemplate), 200
 
 
 @app.route('/code')
 @app.route('/code/<codeID>')
 def code(codeID=None):
     if codeID == None:
-        pass
+        dataDict = {}
+        return jsonify(dataDict), 204
     else:
         dataDict = data.loc[int(codeID)].to_dict()
-        return jsonify(dataDict)
+        return jsonify(dataDict), 200
 
 
 if __name__ == "__main__":

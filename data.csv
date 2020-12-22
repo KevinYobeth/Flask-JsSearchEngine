@@ -11,7 +11,7 @@ Omit the third argument, omitFirstRow, to include the first row (title row) of t
     .map(v => v.split(delimiter));
 CSVToArray('a,b\nc,d'); // [['a', 'b'], ['c', 'd']];
 CSVToArray('a;b\nc;d', ';'); // [['a', 'b'], ['c', 'd']];
-CSVToArray('col1,col2\na,b\nc,d', ',', true); // [['a', 'b'], ['c', 'd']];"
+CSVToArray('col1,col2\na,b\nc,d', m',', true); // [['a', 'b'], ['c', 'd']];"
 CSVToJSON,"string,object,advanced","CSVToJSON: Converts a comma-separated values (CSV) string to a 2D array of objects. The first row of the string is used as the title row.
 
 Use Array.prototype.slice() and Array.prototype.indexOf('\n') and String.prototype.split(delimiter) to separate the first row (title row) into values.
@@ -860,7 +860,7 @@ const el = createElement(
   </div>`
 );
 console.log(el.className); // 'container'"
-createEventHub,"browser,event,advanced","createEventHub: Creates a pub/sub (publish–subscribe) event hub with emit, on, and off methods.
+createEventHub,"browser,event,advanced","createEventHub: Creates a pub/sub (publishï¿½subscribe) event hub with emit, on, and off methods.
 
 Use Object.create(null) to create an empty hub object that does not inherit properties from Object.prototype.
 For emit, resolve the array of handlers based on the event argument and then run each one with Array.prototype.forEach() by passing in the data as an argument.
@@ -3925,11 +3925,11 @@ removeAccents,"string,beginner","removeAccents: Removes accents from strings.
 Use String.prototype.normalize() to convert the string to a normalized Unicode format.
 Use String.prototype.replace() to replace diacritical marks in the given Unicode range by empty strings.","const removeAccents = str =>
   str.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-removeAccents('Antoine de Saint-Exupéry'); // 'Antoine de Saint-Exupery'"
+removeAccents('Antoine de Saint-Exupï¿½ry'); // 'Antoine de Saint-Exupery'"
 removeNonASCII,"string,regexp,intermediate","removeNonASCII: Removes non-printable ASCII characters.
 
 Use String.prototype.replace() with a regular expression to remove non-printable ASCII characters.","const removeNonASCII = str => str.replace(/[^\x20-\x7E]/g, '');
-removeNonASCII('äÄçÇéÉêlorem-ipsumöÖÐþúÚ'); // 'lorem-ipsum'"
+removeNonASCII('ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½lorem-ipsumï¿½ï¿½ï¿½ï¿½ï¿½ï¿½'); // 'lorem-ipsum'"
 removeWhitespace,"string,regexp,beginner","removeWhitespace: Returns a string with whitespaces removed.
 
 Use String.prototype.replace() with a regular expression to replace all occurrences of whitespace characters with an empty string.","const removeWhitespace = str => str.replace(/\s+/g, '');
@@ -4602,15 +4602,15 @@ Use Intl.NumberFormat to enable country / currency sensitive formatting.","const
     currency: curr,
   }).format(n);
 toCurrency(123456.789, 'EUR');
-// €123,456.79  | currency: Euro | currencyLangFormat: Local
+// ï¿½123,456.79  | currency: Euro | currencyLangFormat: Local
 toCurrency(123456.789, 'USD', 'en-us');
 // $123,456.79  | currency: US Dollar | currencyLangFormat: English (United States)
 toCurrency(123456.789, 'USD', 'fa');
 // ?????????? ?$ | currency: US Dollar | currencyLangFormat: Farsi
 toCurrency(322342436423.2435, 'JPY');
-// ¥322,342,436,423 | currency: Japanese Yen | currencyLangFormat: Local
+// ï¿½322,342,436,423 | currency: Japanese Yen | currencyLangFormat: Local
 toCurrency(322342436423.2435, 'JPY', 'fi');
-// 322 342 436 423 ¥ | currency: Japanese Yen | currencyLangFormat: Finnish"
+// 322 342 436 423 ï¿½ | currency: Japanese Yen | currencyLangFormat: Finnish"
 toDecimalMark,"math,beginner","toDecimalMark: Converts a number to a decimal mark formatted string.
 
 Use Number.prototype.toLocaleString() to convert the number to decimal mark format.","const toDecimalMark = num => num.toLocaleString('en-US');
