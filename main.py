@@ -44,7 +44,8 @@ def similarity(search, tfidf_weight):
     min = 10
     while min > 1:
         ind = np.argmax(sim)
-        most.append(ind)
+        if (sim[ind] != 0):
+            most.append(ind)
         sim[ind] = 0
         min -= 1
 
@@ -89,7 +90,10 @@ def search():
         ret = {"id": int(item), "title": title[item]}
         jsonTemplate[str(item)] = ret
 
-    return jsonify(jsonTemplate), 200
+    if (len(most) > 0):
+        return jsonify(jsonTemplate), 200
+    else:
+        return jsonify(jsonTemplate), 204
 
 
 @app.route('/code')

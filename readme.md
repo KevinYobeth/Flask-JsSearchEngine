@@ -102,6 +102,16 @@ Body
 }
 ```
 
+### Response
+
+`204 No Content`
+
+Body
+
+```json
+{}
+```
+
 ## 3. Get code by ID
 
 `GET` https://js-searchengine.herokuapp.com/code/{id}
