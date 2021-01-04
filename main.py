@@ -41,7 +41,7 @@ def similarity(search, tfidf_weight):
     cosine_sim = cosine_similarity(search, tfidf_weight)
     sim = cosine_sim[0]
     most = []
-    min = 5
+    min = 6
     while min > 1:
         ind = np.argmax(sim)
         if (sim[ind] != 0):
